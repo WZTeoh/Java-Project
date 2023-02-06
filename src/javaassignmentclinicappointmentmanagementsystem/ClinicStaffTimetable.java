@@ -4,6 +4,8 @@ package javaassignmentclinicappointmentmanagementsystem;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
+import java.util.Calendar;
+
 
 
 public class ClinicStaffTimetable extends javax.swing.JFrame {
@@ -102,56 +104,6 @@ public class ClinicStaffTimetable extends javax.swing.JFrame {
 
         tableRec.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
             },
             new String [] {
                 "No. ", "Patient Name", "Available Date", "Available Time"
@@ -275,8 +227,7 @@ public class ClinicStaffTimetable extends javax.swing.JFrame {
         DefaultTableModel tblModel = (DefaultTableModel)tableRec.getModel();
         
         //add String array data
-        tblModel.addRow(new Object[]{"1", "Column 2", "Column 3", "123"});
-        System.out.println("added");
+        tblModel.addRow(new String[]{"1", "Column 2", "Column 3", comTime});
         
         
                
