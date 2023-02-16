@@ -34,8 +34,7 @@ public class PatientsViewAndBookAppointmentCode extends Frame implements ActionL
         add(label);
         add(labelAvTimes);
         
-        
-        ClinicStaffTimetableCode obj3 = new ClinicStaffTimetableCode();
+                
         //obj3.add(ClinicStaffTimetable.TA);
         add(taSlot);
         

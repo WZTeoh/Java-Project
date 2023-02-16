@@ -4,6 +4,8 @@
  */
 package javaassignmentclinicappointmentmanagementsystem;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -33,9 +35,11 @@ public class PatientsLoginPage extends javax.swing.JFrame {
         labelUSN = new javax.swing.JLabel();
         tfUSN = new javax.swing.JTextField();
         labelPass = new javax.swing.JLabel();
-        tfPass = new javax.swing.JTextField();
         butClose = new javax.swing.JButton();
         butLog = new javax.swing.JButton();
+        pfPass = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +63,10 @@ public class PatientsLoginPage extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Login Username: Patient123 ");
+
+        jLabel2.setText("Login Password: cPatient_123 ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -71,8 +79,8 @@ public class PatientsLoginPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(labelPLP, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfUSN)
-                    .addComponent(tfPass, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE))
+                    .addComponent(tfUSN, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                    .addComponent(pfPass))
                 .addGap(22, 22, 22))
             .addGroup(layout.createSequentialGroup()
                 .addGap(122, 122, 122)
@@ -80,6 +88,12 @@ public class PatientsLoginPage extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addComponent(butLog)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(128, 128, 128))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,14 +105,18 @@ public class PatientsLoginPage extends javax.swing.JFrame {
                     .addComponent(labelUSN)
                     .addComponent(tfUSN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelPass)
-                    .addComponent(tfPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
+                    .addComponent(pfPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butClose)
                     .addComponent(butLog))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         pack();
@@ -110,7 +128,19 @@ public class PatientsLoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_butCloseActionPerformed
 
     private void butLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butLogActionPerformed
-        // TODO add your handling code here:
+        if("Patient123".equals(tfUSN.getText()) && "cPatient_123".equals(pfPass.getText())){
+            JOptionPane.showMessageDialog(null, "Login Successful");
+            dispose();
+            //class object = new class();
+        }
+        else if("".equals(tfUSN.getText()) || "".equals(pfPass.getText())){
+            JOptionPane.showMessageDialog(null, "Please enter username and Password","Alert",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Invalid Username and Password! Please try again", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+            tfUSN.setText("");
+            pfPass.setText("");
+        }
         
     }//GEN-LAST:event_butLogActionPerformed
 
@@ -152,10 +182,12 @@ public class PatientsLoginPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butClose;
     private javax.swing.JButton butLog;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelPLP;
     private javax.swing.JLabel labelPass;
     private javax.swing.JLabel labelUSN;
-    private javax.swing.JTextField tfPass;
+    private javax.swing.JPasswordField pfPass;
     private javax.swing.JTextField tfUSN;
     // End of variables declaration//GEN-END:variables
 }

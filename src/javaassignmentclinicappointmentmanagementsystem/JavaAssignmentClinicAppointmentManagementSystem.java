@@ -11,9 +11,10 @@ import java.time.format.DateTimeFormatter;
 public class JavaAssignmentClinicAppointmentManagementSystem {
     public static void main(String[] args) {
         
-        //LoginPageCode obj = new LoginPageCode();
-        //ClinicStaffTimetableCode obj1 = new ClinicStaffTimetableCode();
-        PatientsViewAndBookAppointmentCode obj2 = new PatientsViewAndBookAppointmentCode();
+        ClinicStaffTimeslot csts = new ClinicStaffTimeslot();
+        
+        //ClinicStaffTimetable obj1 = new ClinicStaffTimetable();
+        //PatientsViewAndBookAppointmentCode obj2 = new PatientsViewAndBookAppointmentCode();
         
         
         //ClinicStaffLoginPageCode obj = new ClinicStaffLoginPageCode();

@@ -32,8 +32,8 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="labelPLP" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
-                  <Component id="tfUSN" alignment="0" max="32767" attributes="0"/>
-                  <Component id="tfPass" alignment="0" pref="263" max="32767" attributes="0"/>
+                  <Component id="tfUSN" alignment="0" pref="263" max="32767" attributes="0"/>
+                  <Component id="pfPass" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
           </Group>
@@ -43,6 +43,14 @@
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Component id="butLog" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel1" min="-2" pref="164" max="-2" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -57,16 +65,20 @@
                   <Component id="tfUSN" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="labelPass" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="tfPass" alignment="0" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelPass" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pfPass" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="butClose" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="butLog" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="86" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="74" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -89,8 +101,6 @@
         <Property name="text" type="java.lang.String" value="Password: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tfPass">
-    </Component>
     <Component class="javax.swing.JButton" name="butClose">
       <Properties>
         <Property name="text" type="java.lang.String" value="Close"/>
@@ -106,6 +116,18 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butLogActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="pfPass">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Login Username: Patient123 "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Login Password: cPatient_123 "/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

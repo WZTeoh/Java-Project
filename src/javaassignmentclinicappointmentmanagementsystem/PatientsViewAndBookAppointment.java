@@ -1,7 +1,15 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package javaassignmentclinicappointmentmanagementsystem;
 
-import java.util.Calendar;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author user
+ */
 public class PatientsViewAndBookAppointment extends javax.swing.JFrame {
 
     /**
@@ -11,7 +19,7 @@ public class PatientsViewAndBookAppointment extends javax.swing.JFrame {
         initComponents();
         setTitle("Patients Appointment System");
         setLocationRelativeTo(null);
-        setVisible(true);
+        setVisible(true);        
     }
 
     /**
@@ -23,50 +31,31 @@ public class PatientsViewAndBookAppointment extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelPT = new javax.swing.JLabel();
+        labelBookApp = new javax.swing.JLabel();
         labelTimeslot = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        taTimeslot = new javax.swing.JTextArea();
-        labelDateTime = new javax.swing.JLabel();
-        comboMon = new javax.swing.JComboBox<>();
-        labelDate = new javax.swing.JLabel();
-        comboDay = new javax.swing.JComboBox<>();
-        comboYear = new javax.swing.JComboBox<>();
-        labelTime = new javax.swing.JLabel();
-        comboHour = new javax.swing.JComboBox<>();
-        comboMin = new javax.swing.JComboBox<>();
-        comboAmPm = new javax.swing.JComboBox<>();
+        tableTimeslot = new javax.swing.JTable();
         butBook = new javax.swing.JButton();
         butCancel = new javax.swing.JButton();
         butClose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        labelPT.setText("Patients Timetable");
+        labelBookApp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelBookApp.setText("Book Appointment");
 
-        labelTimeslot.setText("Available timeslot");
+        labelTimeslot.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelTimeslot.setText("Timeslot Available");
 
-        taTimeslot.setColumns(20);
-        taTimeslot.setRows(5);
-        jScrollPane1.setViewportView(taTimeslot);
+        tableTimeslot.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        labelDateTime.setText("Please choose the date and time");
-
-        comboMon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}));
-
-        labelDate.setText("Date");
-
-        comboDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
-
-        comboYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024", "2025"}));
-
-        labelTime.setText("Time");
-
-        comboHour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
-
-        comboMin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33","34","35","36","37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47","48","49","50","51","52","53","54","55","56","57","58", "59"}));
-
-        comboAmPm.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AM", "PM"}));
+            },
+            new String [] {
+                "No. ", "Available Date", "Available Time"
+            }
+        ));
+        jScrollPane1.setViewportView(tableTimeslot);
 
         butBook.setText("Book Appointment");
         butBook.addActionListener(new java.awt.event.ActionListener() {
@@ -93,94 +82,69 @@ public class PatientsViewAndBookAppointment extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(labelBookApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addContainerGap()
+                .addComponent(labelTimeslot, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelTime, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboHour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboAmPm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelDate, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboMon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelDateTime, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(85, 85, 85))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(butBook)
-                        .addGap(18, 18, 18)
+                        .addGap(50, 50, 50)
                         .addComponent(butCancel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(butClose)
-                        .addGap(19, 19, 19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelTimeslot, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelPT, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(108, 108, 108))))
+                        .addGap(46, 46, 46)
+                        .addComponent(butClose))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(labelPT)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(35, 35, 35)
+                .addComponent(labelBookApp)
+                .addGap(33, 33, 33)
                 .addComponent(labelTimeslot)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(labelDateTime)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboMon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelDate)
-                    .addComponent(comboDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelTime)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(comboHour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(comboMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(comboAmPm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butBook)
                     .addComponent(butCancel)
                     .addComponent(butClose))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void butCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCloseActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_butCloseActionPerformed
-
     private void butBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butBookActionPerformed
         // TODO add your handling code here:
+        try{
+            String[] options = {"Cancel","Yes"};//0 = Cancel, 1 = Yes -- Always count from 0
+            int x = JOptionPane.showOptionDialog(null, "Do you want to confirm booking?", "Confirmation on booking", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+        
+            if(x == 1){
+                dispose();
+                PatientsBookAppForm Patbaf = new PatientsBookAppForm();
+            }
+            else{}
+        }
+        catch(Exception e){//What exception type to use when user not selecting the option timeslot then proceed with the book appointment, it throw an error
+            
+        }
+        
     }//GEN-LAST:event_butBookActionPerformed
 
     private void butCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCancelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_butCancelActionPerformed
+
+    private void butCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCloseActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_butCloseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,18 +185,9 @@ public class PatientsViewAndBookAppointment extends javax.swing.JFrame {
     private javax.swing.JButton butBook;
     private javax.swing.JButton butCancel;
     private javax.swing.JButton butClose;
-    private javax.swing.JComboBox<String> comboAmPm;
-    private javax.swing.JComboBox<String> comboDay;
-    private javax.swing.JComboBox<String> comboHour;
-    private javax.swing.JComboBox<String> comboMin;
-    private javax.swing.JComboBox<String> comboMon;
-    private javax.swing.JComboBox<String> comboYear;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelDate;
-    private javax.swing.JLabel labelDateTime;
-    private javax.swing.JLabel labelPT;
-    private javax.swing.JLabel labelTime;
+    private javax.swing.JLabel labelBookApp;
     private javax.swing.JLabel labelTimeslot;
-    private javax.swing.JTextArea taTimeslot;
+    private javax.swing.JTable tableTimeslot;
     // End of variables declaration//GEN-END:variables
 }

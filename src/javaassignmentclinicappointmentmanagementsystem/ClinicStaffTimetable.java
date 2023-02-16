@@ -1,10 +1,20 @@
 
 package javaassignmentclinicappointmentmanagementsystem;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.util.Calendar;
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -23,15 +33,70 @@ public class ClinicStaffTimetable extends javax.swing.JFrame {
     PreparedStatement pat = null; 
     ResultSet rs = null; 
     Statement st = null; 
-
+    
+    
+    
+    
+    /*
+    File file = new File("\"C:\\Users\\user\\Desktop\\ClinicAppointmentSystemStaffTimeslot.xlsx\"");
+    
+    try{
+    FileWriter fw = new FileWriter(file);
+    
+    for(int i =0; i<str.length();i++){
+        fw.write(str.charAt(i));
+        
+        System.out.println("Successfully written");
+        
+        fw.close();
+    }
+    catch (Exception e){
+            e.getStackTrace();
+            }
+}
+    
+    
+    PrintWriter pw = new PrintWriter(fw);
+    
+    pw.println("Line A"); 
+    */
+    
     /**
      * Creates new form ClinicStaffTimetable
      */
     public ClinicStaffTimetable() {
+        
         initComponents();
-        setTitle("Clinic Staff Available Timeslot");
+        setTitle("Clinic Staff Timeslot");
         setLocationRelativeTo(null); //Location set to center
         setVisible(true);
+        
+        String filePath = "\"C:\\Users\\user\\Desktop\\ClinicAppointmentSystemStaffTimeslot.xlsx\"";
+        File file = new File(filePath);
+        
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            DefaultTableModel model = (DefaultTableModel)tableRec.getModel();
+            //model.setColumnIdentifiers(new Array[]{"No.","Available Date","Available Time"});
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ClinicStaffTimetable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+        /*
+        FileWriter writer;
+        try {
+            writer = new FileWriter("\"C:\\Users\\user\\Desktop\\ClinicAppointmentSystemStaffTimeslot.xlsx\"");
+            writer.write("1");
+            writer.write("2");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+        
+        
+        
     }
 
     /**
@@ -58,6 +123,7 @@ public class ClinicStaffTimetable extends javax.swing.JFrame {
         butClose = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableRec = new javax.swing.JTable();
+        butBackMain = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,6 +134,11 @@ public class ClinicStaffTimetable extends javax.swing.JFrame {
         labelTime.setText("Time: ");
 
         comboMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}));
+        comboMonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboMonthActionPerformed(evt);
+            }
+        });
 
         comboDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
 
@@ -106,7 +177,7 @@ public class ClinicStaffTimetable extends javax.swing.JFrame {
             new Object [][] {
             },
             new String [] {
-                "No. ", "Patient Name", "Available Date", "Available Time"
+                "No. ", "Available Date", "Available Time"
             }
         ) {
             Class[] types = new Class [] {
@@ -118,6 +189,13 @@ public class ClinicStaffTimetable extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tableRec);
+
+        butBackMain.setText("Back to Main Menu");
+        butBackMain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butBackMainActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -151,15 +229,18 @@ public class ClinicStaffTimetable extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(comboDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(comboYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(butAdd)
-                        .addGap(59, 59, 59)
-                        .addComponent(butRem)
-                        .addGap(54, 54, 54)
-                        .addComponent(butClose)))
+                                .addComponent(comboYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(butAdd)
+                .addGap(59, 59, 59)
+                .addComponent(butRem)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(butBackMain)
+                .addGap(31, 31, 31)
+                .addComponent(butClose)
+                .addGap(126, 126, 126))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,10 +267,12 @@ public class ClinicStaffTimetable extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(butRem)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(butClose)
-                    .addComponent(butAdd))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(butRem)
+                        .addComponent(butAdd)
+                        .addComponent(butBackMain)))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
@@ -199,36 +282,33 @@ public class ClinicStaffTimetable extends javax.swing.JFrame {
     private void butAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butAddActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Your timeslot has been added!");
+        
+        /*
+        File file = new File("\"C:\\Users\\user\\Desktop\\ClinicAppointmentSystemStaffTimeslot.xlsx\"");
+        Workbook wb = Workbook.getWorkbook(file);
+        */
+        
         optMon = (String) comboMonth.getSelectedItem();
         optDay = (String) comboDay.getSelectedItem();
         optYear = (String) comboYear.getSelectedItem();
-        String comDate = optMon + optDay + optYear;
+        String comDate = optMon + " " + optDay + ", " + optYear;
         optHour = (String) comboHour.getSelectedItem();
         optMin = (String) comboMin.getSelectedItem();
         optAmPm = (String) comboAmPm.getSelectedItem();
-        String comTime = optHour + optMin + optAmPm;
+        String comTime = optHour +":"+ optMin + optAmPm;
         
-        //tableRec.add(optHour + ":" + optMin + " " + optAmPm + " " + optMon + " " + optDay + ", " + optYear + "\n", this);
-        //tableRec.addRowSelectionInterval(5, 0);
-        /*
-        Object data [][] = {{"", ""}, {"", ""}, {"a", "c"}};
-        //Object data[] = {"", "", comDate, comTime};
-        DefaultTableModel tblModel = (DefaultTableModel)tableRec.getModel();
-        
-        //add String array data
-        tblModel.addRow(data);*/
-        
-        //PreparedStatement Add = Con.prepareStatement(null);
-        //comboMonth.getSelectedItem().toString();
-        
-        // tableRec.add(this, comDate);
+        int rowCount;
+        Array[] array = new Array[]{};
         
         
         DefaultTableModel tblModel = (DefaultTableModel)tableRec.getModel();
         
+        for(int i=0; i<tblModel.getRowCount();i++){
+            //System.out.println(i);
+            rowCount = i;
+        }
         //add String array data
-        tblModel.addRow(new String[]{"1", "Column 2", "Column 3", comTime});
-        
+        //tblModel.addRow(new String[]{"", comDate, comTime});
         
                
     }//GEN-LAST:event_butAddActionPerformed
@@ -241,6 +321,16 @@ public class ClinicStaffTimetable extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_butCloseActionPerformed
+
+    private void comboMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboMonthActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboMonthActionPerformed
+
+    private void butBackMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butBackMainActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        ClinicStaffMainMenu csmm = new ClinicStaffMainMenu();
+    }//GEN-LAST:event_butBackMainActionPerformed
 
     /**
      * @param args the command line arguments
@@ -279,6 +369,7 @@ public class ClinicStaffTimetable extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butAdd;
+    private javax.swing.JButton butBackMain;
     private javax.swing.JButton butClose;
     private javax.swing.JButton butRem;
     private javax.swing.JComboBox<String> comboAmPm;

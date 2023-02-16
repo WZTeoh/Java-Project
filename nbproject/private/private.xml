@@ -3,19 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/ClinicStaffMainMenu.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/ClinicStaff.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/LoginPageCode.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/PatientsLoginPageCode.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/ClinicStaffLoginPage.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/PatientsViewAndBookAppointmentCode.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/JavaAssignmentClinicAppointmentManagementSystem.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/PatientsViewAndBookAppointmentCopy.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/PatientsViewAndBookAppointment.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/LoginPage.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/PatientsLoginPage.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/DateAndTime.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/PatientsBookAppForm.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/Patients.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/ClinicStaffTimetableCode.java</file>
-            <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/ClinicStaffLoginPageCode.java</file>
             <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/ClinicStaffTimetable.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/ClinicStaffTimeslot.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/JavaAssignmentClinicAppointmentManagementSystem/src/javaassignmentclinicappointmentmanagementsystem/ClinicStaffModifyTimeslot.java</file>
         </group>
     </open-files>
 </project-private>
